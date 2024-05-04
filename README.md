@@ -1,3 +1,3 @@
 # Mapping-urban-thermal-environment-and-EV-activity
-UC Berkeley CYPLAN 255 Final Project
+Spring 2024 | UC Berkeley
 
