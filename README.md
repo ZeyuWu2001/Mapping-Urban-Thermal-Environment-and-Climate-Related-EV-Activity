@@ -33,38 +33,6 @@ New York City census tract and block group shapefile data
 (Understanding Geographic Identifiers (GEOIDs) (census.gov)
 Open Street Map: for data on the locations of green space, and driving roads (https://osmnx.readthedocs.io/en/stable/)
 
-
-Table 1. Data Source Table
-Variables/ illustration
-Region boundary
-LST °C
-EV Station
-EV Demand
-EV CO2
-Green Space
-Building Footprint
-Urban Structure
-Data Source
-U.S. Census Bureau
-NASA LP DAAC
-U.S. Department of Energy
-Replica
-Replica
-Open Street Network
-NY Open Data
-Open Street Network
-Data Type
-.SHP
-.TIF
-.CSV
-.CSV
-.CSV
-.JSON
-.SHP
-GRAPH
-
-
-
 4. Methodology and Result
 4.1 Mapping and Measuring Density Distribution Using H3 Hexagonal Hierarchical Geospatial Indexing System
 H3 is a geospatial indexing system using a hexagonal grid that can be (approximately) subdivided into finer and finer hexagonal grids, combining the benefits of a hexagonal grid with S2's hierarchical subdivisions. To better understand the mapping results, H3 hexagonal grids were employed in this study to visualize the spatial distribution of urban thermal environment and climate-related electric vehicle (EV) activity. The choice of a hexagonal grid system over traditional square grids was motivated by several key advantages:
@@ -72,12 +40,6 @@ Hexagonal cells maintain an equal area across the study region, ensuring that de
 The hexagonal grid's improved adjacency, with each cell having six equidistant neighbors, facilitates spatial analysis tasks such as interpolation and clustering, enabling more robust modeling of thermal dynamics and EV usage patterns. 
 The hexagonal grid mitigates sampling bias associated with square grids, providing more uniform coverage of the study area and reducing the influence of grid orientation on the analysis results. 
 The hexagonal grid's visual appeal and ability to create visually appealing patterns and gradients enhance the communication and interpretation of the spatial patterns observed in the urban thermal environment and climate-related EV activity. 
-
-Figure 1. Comparative New York City H3 Hexagonal Grid Plot
-
-
-Figure 2. Comparative San Francisco-Oakland-Berkeley CBSA H3 Hexagonal Grid Plot
-
 By leveraging the advantages of the hexagonal grid system, this study aimed to provide a comprehensive and accurate representation of the interplay between urban thermal dynamics and EV usage, informing sustainable urban planning and transportation strategies.
 
 4.2 Mapping and Measuring Green Space Data Density Distribution from OpenStreetMap
@@ -97,15 +59,6 @@ For each hexagon, the green space density was calculated by computing the total 
 Visualize the green space density distribution
 The green space density distribution was visualized using a choropleth map, with the hexagons colored based on their corresponding green space density values. This visualization technique allows for an effective communication of the spatial patterns and variations in green space density across the study area.
 
-Figure 3. Distribution of Green Open Spaces in New York City and Surrounding Counties
-
-Figure 3 shows the distribution of green open spaces, represented by the green-colored areas, across the New York City region and its surrounding counties. This map provides an overview of the spatial distribution of parks, recreational areas, and other green spaces within the study area. It serves as the initial input data for the analysis, highlighting the locations and extent of these green spaces.
-
-
-Figure 4. H3 Hexagonal Grid Representation of Green Space Distribution in New York City
-
-Figure 4 presents the results of the methodology described in the research paper, where a hexagonal grid system (H3) has been applied to visualize the distribution of green spaces across New York City. The hexagonal grid cells are colored based on the presence or absence of green spaces within their boundaries. The green hexagons in Figure 4 indicate cells that contain at least a portion of a green space, such as a park or recreational area. These cells are considered to have a significant presence of green spaces within their boundaries. On the other hand, the gray hexagons represent cells that do not overlap with any green spaces, indicating a lack of green spaces within those particular areas. Each hexagonal cell covers an equal area, ensuring that the density or presence of green spaces is not distorted by varying cell sizes. The hexagonal grid structure allows for better representation of spatial relationships and adjacencies, facilitating more accurate analysis of spatial patterns and clustering.
-
 4.3 Mapping and Measuring Land Surface Temperature Data Distribution using Google Earth Engine
 To analyze the urban thermal environment and its potential impact on climate-related electric vehicle (EV) activity, land surface temperature (LST) data was incorporated into the study. The LST data provides valuable information about the spatial distribution of surface temperatures across the study area, which can influence factors such as urban heat island effects and energy consumption patterns related to EV usage. The LST data was obtained from the Moderate Resolution Imaging Spectroradiometer (MODIS) instrument aboard the Terra and Aqua satellites. Specifically, the MOD11A1 product, which provides daily land surface temperature and emissivity values at a 1-kilometer spatial resolution, was utilized. The data retrieval and processing were facilitated through the Google Earth Engine (GEE) platform, a cloud-based geospatial analysis platform that provides access to a vast repository of remote sensing data and computational resources. The following steps were taken to measure the LST data density distribution using GEE:
 Authentication and Initialization
@@ -122,22 +75,3 @@ LST Sampling at Hexagon Centroids
 For each hexagon in the H3 grid, the centroid was calculated, and the corresponding LST value was sampled from the raster data at the centroid location. This process assigned an LST value to each hexagonal cell, enabling the analysis of the LST density distribution across the study area.
 Visualization
 The LST raster data and the hexagonal grid with sampled LST values were visualized using appropriate colormaps and choropleth maps, respectively. These visualizations aided in the interpretation and communication of the spatial patterns in the urban thermal environment.
-
-
-Figure 5. Google Earth Engine Code Editor Script
-
-Figure 5 is the code script for processing Land Surface Temperature in the 2023 spring season.
-
-
-Figure 6. 2023 Spring Land Surface Temperature in the United States
-
-Figure 6 demonstrates the visualization result of the Google Earth Engine code.
-
-Figure 7. Comparative Visualization of LST in NYC: Raster and Hexagonal Grid Analysis
-
-Figure 7 is the Comparative Visualization of LST in NYC: Raster and Hexagonal Grid Analysis. Panel A presents the LST data in a raster format highlighting the pixel-by-pixel temperature variations across the cityscape. Panel B displays the same LST data applied to a hexagonal grid, where each hexagon represents the mean temperature within its area, calculated from the centroid LST value. Both panels utilize a consistent color scale ranging from 5°C (purple) to 25°C (yellow), facilitating direct comparison between the granular raster data and the aggregated hexagonal representation.
-
-
-Figure 8. Comparative Visualization of LST in Selected Area: Raster and Hexagonal Grid Analysis
-
-Figure 8 displays two methods of visualizing Land Surface Temperature (LST) data over a geographic region. This figure exemplifies the application of two spatial data visualization techniques to represent land surface temperature (LST) for a geographical region, useful in assessing environmental and climatic conditions. Panel A employs a raster-based approach to display LST data, where the fine granularity of the data is evident through the detailed color transitions, highlighting micro-climatic variations across the terrain. This method is particularly valuable for identifying specific hotspots and cooler areas, facilitating detailed analyses of localized climate behavior and its potential impacts on local ecosystems and urban heat dynamics. Panel B, conversely, utilizes a hexagonal grid to aggregate and simplify the LST data, reducing the spatial resolution but enhancing the ability to discern broader regional temperature patterns. This approach helps in understanding larger-scale climatic trends and is advantageous for strategic planning and policy-making where detailed data may be less critical than overall trends. Both panels are crucial for comprehensive environmental analysis, offering insights into the spatial distribution of temperatures which can influence ecological balances, human health, and urban planning. Such visualizations are instrumental in environmental research, providing a basis for comparative studies of different data aggregation techniques and their implications for interpreting climatic data in relation to environmental and urban planning policies. By leveraging the Google Earth Engine platform and its integration with Python, this study could efficiently access, process, and analyze the MODIS LST data, a crucial component in understanding the urban thermal environment and its potential influence on climate-related EV activity in New York City.
