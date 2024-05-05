@@ -1,7 +1,7 @@
 # Mapping-urban-thermal-environment-and-EV-activity
 Spring 2024 | UC Berkeley
 
-1. Introduction 
+1. Introduction
 1.1 Background
 Extreme heat is the number-one climate killer in the U.S., accounting for more deaths than sea level rise, flooding, drought, and other impacts. Reducing CO2 emissions is a growing challenge for the transport sector. Transportation produces roughly 23 percent of the global CO2 emissions from fuel combustion.  Our primary concern is how can we boost EV usage and equality to boost sustainable urban development towards climate change. We are interested in how the different regions of a city can vary according to different urban environments in Climate Change (LST & CO2). Points of interest (POI) can be Land Surface Temperature (LST) and Carbon dioxide (CO2). A city can have different building types, population density, race density, green space density, and so forth. For now, we selected the following metrics to measure the relationship between POIs like LST, Urban EV CO2 Emission, and Urban Structure.
 
