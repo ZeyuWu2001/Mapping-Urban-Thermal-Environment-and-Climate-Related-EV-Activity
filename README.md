@@ -5,4 +5,4 @@
 _Spring 2024 | UC Berkeley_
 
 
-**[ArcGIS StoryMaps Website](https://arcg.is/1GfKiX)**
+**[ArcGIS StoryMaps](https://arcg.is/1GfKiX)**
