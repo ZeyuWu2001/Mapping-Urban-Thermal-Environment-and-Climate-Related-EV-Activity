@@ -1,4 +1,4 @@
-# Mapping Urban Thermal Environment & Climate-related EV Activity
+# Mapping Urban Thermal Environment & Climate-Related EV Activity
 
 > **Urban Informatics and Data Visualization**
 
